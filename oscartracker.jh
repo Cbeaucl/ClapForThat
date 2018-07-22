@@ -14,10 +14,6 @@ relationship OneToMany
 Group{id} to Event{id}
 }
 
-relationship OneToMany
-{
-	Event{id}
-}
 entity Category{
 name String,
 description String,
@@ -25,7 +21,7 @@ completed Boolean
 }
 
 entity Nominee{
-name String,
+name String
 
 }
 
