@@ -1,0 +1,33 @@
+entity Group {
+name String,
+active Boolean
+}
+relationship ManyToMany{
+User{email} to Group{id}
+}
+entity Event {
+startTime LocalDate,
+name String
+}
+relationship OneToMany
+{
+Group{id} to Event{id}
+}
+
+relationship OneToMany
+{
+	Event{id}
+}
+entity Category{
+name String,
+description String,
+completed Boolean
+}
+
+entity Nominee{
+name String,
+
+}
+
+entity Choice{
+}
