@@ -88,13 +88,11 @@ public class UserGroup implements Serializable {
 
     public UserGroup addUser(User user) {
         this.users.add(user);
-        user.getGroups().add(this);
         return this;
     }
 
     public UserGroup removeUser(User user) {
         this.users.remove(user);
-        user.getGroups().remove(this);
         return this;
     }
 

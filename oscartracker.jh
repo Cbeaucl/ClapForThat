@@ -3,7 +3,7 @@ name String,
 active Boolean
 }
 relationship ManyToOne {
-Choice{user} to User{choices}
+Choice{user} to User
 }
 relationship OneToMany {
 Category to Choice{category}
@@ -12,7 +12,7 @@ relationship OneToMany {
 Nominee to Choice{nominee}
 }
 relationship ManyToMany{
-UserGroup{user} to User{group}
+UserGroup{user} to User
 }
 relationship ManyToOne{
 Category{event} to Event{category}
