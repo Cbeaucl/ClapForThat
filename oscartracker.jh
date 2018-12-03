@@ -15,10 +15,10 @@ relationship ManyToMany{
 UserGroup{user} to User{group}
 }
 relationship ManyToOne{
-Category{id} to Event{id}
+Category{event} to Event{category}
 }
 relationship ManyToOne{
-Category{id} to Nominee{id}
+Category{nominee} to Nominee{category}
 }
 entity Event {
 startTime LocalDate,

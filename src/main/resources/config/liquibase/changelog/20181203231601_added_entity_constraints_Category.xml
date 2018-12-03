@@ -8,15 +8,15 @@
     -->
     <changeSet id="20181203231601-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="id_id"
+        <addForeignKeyConstraint baseColumnNames="event_id"
                                  baseTableName="category"
-                                 constraintName="fk_category_id_id"
+                                 constraintName="fk_category_event_id"
                                  referencedColumnNames="id"
                                  referencedTableName="event"/>
 
-        <addForeignKeyConstraint baseColumnNames="id_id"
+        <addForeignKeyConstraint baseColumnNames="nominee_id"
                                  baseTableName="category"
-                                 constraintName="fk_category_id_id"
+                                 constraintName="fk_category_nominee_id"
                                  referencedColumnNames="id"
                                  referencedTableName="nominee"/>
 

@@ -8,8 +8,8 @@ export interface ICategory {
     description?: string;
     completed?: boolean;
     choices?: IChoice[];
-    id?: IEvent;
-    id?: INominee;
+    event?: IEvent;
+    nominee?: INominee;
 }
 
 export class Category implements ICategory {
@@ -19,8 +19,8 @@ export class Category implements ICategory {
         public description?: string,
         public completed?: boolean,
         public choices?: IChoice[],
-        public id?: IEvent,
-        public id?: INominee
+        public event?: IEvent,
+        public nominee?: INominee
     ) {
         this.completed = this.completed || false;
     }

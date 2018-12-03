@@ -38,9 +38,9 @@ public class Event implements Serializable {
     @JsonIgnoreProperties("ids")
     private UserGroup id;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "event")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Category> ids = new HashSet<>();
+    private Set<Category> categories = new HashSet<>();
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -89,29 +89,29 @@ public class Event implements Serializable {
         this.id = userGroup;
     }
 
-    public Set<Category> getIds() {
-        return ids;
+    public Set<Category> getCategories() {
+        return categories;
     }
 
-    public Event ids(Set<Category> categories) {
-        this.ids = categories;
+    public Event categories(Set<Category> categories) {
+        this.categories = categories;
         return this;
     }
 
-    public Event addId(Category category) {
-        this.ids.add(category);
-        category.setId(this);
+    public Event addCategory(Category category) {
+        this.categories.add(category);
+        category.setEvent(this);
         return this;
     }
 
-    public Event removeId(Category category) {
-        this.ids.remove(category);
-        category.setId(null);
+    public Event removeCategory(Category category) {
+        this.categories.remove(category);
+        category.setEvent(null);
         return this;
     }
 
-    public void setIds(Set<Category> categories) {
-        this.ids = categories;
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

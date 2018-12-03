@@ -17,16 +17,16 @@
                 <dd>
                     <span>{{category.completed}}</span>
                 </dd>
-                <dt><span>Id</span></dt>
+                <dt><span>Event</span></dt>
                 <dd>
-                    <div *ngIf="category.id">
-                        <a [routerLink]="['/event', category.id?.id, 'view']">{{category.id?.id}}</a>
+                    <div *ngIf="category.event">
+                        <a [routerLink]="['/event', category.event?.id, 'view']">{{category.event?.id}}</a>
                     </div>
                 </dd>
-                <dt><span>Id</span></dt>
+                <dt><span>Nominee</span></dt>
                 <dd>
-                    <div *ngIf="category.id">
-                        <a [routerLink]="['/nominee', category.id?.id, 'view']">{{category.id?.id}}</a>
+                    <div *ngIf="category.nominee">
+                        <a [routerLink]="['/nominee', category.nominee?.id, 'view']">{{category.nominee?.id}}</a>
                     </div>
                 </dd>
             </dl>
