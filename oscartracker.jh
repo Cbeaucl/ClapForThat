@@ -26,7 +26,7 @@ name String
 }
 relationship ManyToOne
 {
-Event{id} to UserGroup{id}
+Event{group} to UserGroup{event}
 }
 
 entity Category{
