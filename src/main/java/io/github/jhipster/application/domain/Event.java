@@ -35,8 +35,8 @@ public class Event implements Serializable {
     private String name;
 
     @ManyToOne
-    @JsonIgnoreProperties("ids")
-    private UserGroup id;
+    @JsonIgnoreProperties("events")
+    private UserGroup group;
 
     @OneToMany(mappedBy = "event")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -76,17 +76,17 @@ public class Event implements Serializable {
         this.name = name;
     }
 
-    public UserGroup getId() {
-        return id;
+    public UserGroup getGroup() {
+        return group;
     }
 
-    public Event id(UserGroup userGroup) {
-        this.id = userGroup;
+    public Event group(UserGroup userGroup) {
+        this.group = userGroup;
         return this;
     }
 
-    public void setId(UserGroup userGroup) {
-        this.id = userGroup;
+    public void setGroup(UserGroup userGroup) {
+        this.group = userGroup;
     }
 
     public Set<Category> getCategories() {

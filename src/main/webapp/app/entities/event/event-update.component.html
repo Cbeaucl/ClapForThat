@@ -26,10 +26,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" for="field_id">Id</label>
-                    <select class="form-control" id="field_id" name="id" [(ngModel)]="event.id" >
+                    <label class="form-control-label" for="field_group">Group</label>
+                    <select class="form-control" id="field_group" name="group" [(ngModel)]="event.group" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="userGroupOption.id === event.id?.id ? event.id : userGroupOption" *ngFor="let userGroupOption of usergroups; trackBy: trackUserGroupById">{{userGroupOption.id}}</option>
+                        <option [ngValue]="userGroupOption.id === event.group?.id ? event.group : userGroupOption" *ngFor="let userGroupOption of usergroups; trackBy: trackUserGroupById">{{userGroupOption.id}}</option>
                     </select>
                 </div>
             </div>

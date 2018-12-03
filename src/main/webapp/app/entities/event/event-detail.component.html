@@ -13,10 +13,10 @@
                 <dd>
                     <span>{{event.name}}</span>
                 </dd>
-                <dt><span>Id</span></dt>
+                <dt><span>Group</span></dt>
                 <dd>
-                    <div *ngIf="event.id">
-                        <a [routerLink]="['/user-group', event.id?.id, 'view']">{{event.id?.id}}</a>
+                    <div *ngIf="event.group">
+                        <a [routerLink]="['/user-group', event.group?.id, 'view']">{{event.group?.id}}</a>
                     </div>
                 </dd>
             </dl>
