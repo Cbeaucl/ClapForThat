@@ -1,23 +1,34 @@
-entity Group {
+entity UserGroup {
 name String,
 active Boolean
 }
+relationship ManyToOne {
+Choice{id} to User{id}
+}
+relationship OneToMany {
+Category{id} to Choice{id}
+}
+relationship OneToMany {
+Choice{id} to Nominee{id}
+}
 relationship ManyToMany{
-User{email} to Group{id}
+UserGroup{id} to User{id}
+}
+relationship ManyToOne{
+Category{id} to Event{id}
+}
+relationship ManyToOne{
+Category{id} to Nominee{id}
 }
 entity Event {
 startTime LocalDate,
 name String
 }
-relationship OneToMany
+relationship ManyToOne
 {
-Group{id} to Event{id}
+Event{id} to UserGroup{id}
 }
 
-relationship OneToMany
-{
-	Event{id}
-}
 entity Category{
 name String,
 description String,
@@ -25,7 +36,7 @@ completed Boolean
 }
 
 entity Nominee{
-name String,
+name String
 
 }
 
