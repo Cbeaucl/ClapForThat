@@ -9,12 +9,6 @@
                 <dd>
                     <span>{{nominee.name}}</span>
                 </dd>
-                <dt><span>Id</span></dt>
-                <dd>
-                    <div *ngIf="nominee.id">
-                        <a [routerLink]="['/choice', nominee.id?.id, 'view']">{{nominee.id?.id}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

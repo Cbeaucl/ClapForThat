@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface ChoiceRepository extends JpaRepository<Choice, Long> {
 
-    @Query("select choice from Choice choice where choice.id.login = ?#{principal.username}")
-    List<Choice> findByIdIsCurrentUser();
+    @Query("select choice from Choice choice where choice.user.login = ?#{principal.username}")
+    List<Choice> findByUserIsCurrentUser();
 
 }

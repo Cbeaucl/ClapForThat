@@ -16,7 +16,6 @@
             <tr>
             <th><span>ID</span></th>
             <th><span>Name</span></th>
-            <th><span>Id</span></th>
             <th></th>
             </tr>
             </thead>
@@ -24,11 +23,6 @@
             <tr *ngFor="let nominee of nominees ;trackBy: trackId">
                 <td><a [routerLink]="['/nominee', nominee.id, 'view' ]">{{nominee.id}}</a></td>
                 <td>{{nominee.name}}</td>
-                <td>
-                    <div *ngIf="nominee.id">
-                        <a [routerLink]="['../choice', nominee.id?.id, 'view' ]" >{{nominee.id?.id}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

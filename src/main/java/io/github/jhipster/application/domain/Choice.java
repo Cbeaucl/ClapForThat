@@ -1,6 +1,5 @@
 package io.github.jhipster.application.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -8,8 +7,6 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -27,16 +24,17 @@ public class Choice implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @OneToMany(mappedBy = "id")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Nominee> ids = new HashSet<>();
     @ManyToOne
     @JsonIgnoreProperties("")
-    private User id;
+    private User user;
 
     @ManyToOne
-    @JsonIgnoreProperties("ids")
-    private Category id;
+    @JsonIgnoreProperties("choices")
+    private Category category;
+
+    @ManyToOne
+    @JsonIgnoreProperties("choices")
+    private Nominee nominee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -47,55 +45,43 @@ public class Choice implements Serializable {
         this.id = id;
     }
 
-    public Set<Nominee> getIds() {
-        return ids;
+    public User getUser() {
+        return user;
     }
 
-    public Choice ids(Set<Nominee> nominees) {
-        this.ids = nominees;
+    public Choice user(User user) {
+        this.user = user;
         return this;
     }
 
-    public Choice addId(Nominee nominee) {
-        this.ids.add(nominee);
-        nominee.setId(this);
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Choice category(Category category) {
+        this.category = category;
         return this;
     }
 
-    public Choice removeId(Nominee nominee) {
-        this.ids.remove(nominee);
-        nominee.setId(null);
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Nominee getNominee() {
+        return nominee;
+    }
+
+    public Choice nominee(Nominee nominee) {
+        this.nominee = nominee;
         return this;
     }
 
-    public void setIds(Set<Nominee> nominees) {
-        this.ids = nominees;
-    }
-
-    public User getId() {
-        return id;
-    }
-
-    public Choice id(User user) {
-        this.id = user;
-        return this;
-    }
-
-    public void setId(User user) {
-        this.id = user;
-    }
-
-    public Category getId() {
-        return id;
-    }
-
-    public Choice id(Category category) {
-        this.id = category;
-        return this;
-    }
-
-    public void setId(Category category) {
-        this.id = category;
+    public void setNominee(Nominee nominee) {
+        this.nominee = nominee;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

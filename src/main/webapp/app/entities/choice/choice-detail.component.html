@@ -5,14 +5,20 @@
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span>Id</span></dt>
+                <dt><span>User</span></dt>
                 <dd>
-                    {{choice.id?.id}}
+                    {{choice.user?.id}}
                 </dd>
-                <dt><span>Id</span></dt>
+                <dt><span>Category</span></dt>
                 <dd>
-                    <div *ngIf="choice.id">
-                        <a [routerLink]="['/category', choice.id?.id, 'view']">{{choice.id?.id}}</a>
+                    <div *ngIf="choice.category">
+                        <a [routerLink]="['/category', choice.category?.id, 'view']">{{choice.category?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Nominee</span></dt>
+                <dd>
+                    <div *ngIf="choice.nominee">
+                        <a [routerLink]="['/nominee', choice.nominee?.id, 'view']">{{choice.nominee?.id}}</a>
                     </div>
                 </dd>
             </dl>

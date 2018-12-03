@@ -15,13 +15,6 @@
                         [(ngModel)]="nominee.name" />
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" for="field_id">Id</label>
-                    <select class="form-control" id="field_id" name="id" [(ngModel)]="nominee.id" >
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="choiceOption.id === nominee.id?.id ? nominee.id : choiceOption" *ngFor="let choiceOption of choices; trackBy: trackChoiceById">{{choiceOption.id}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

@@ -21,9 +21,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="field_id">Id</label>
-                    <select class="form-control" id="field_id" multiple name="id" [(ngModel)]="userGroup.ids">
-                        <option [ngValue]="getSelected(userGroup.ids, userOption)" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    <label for="field_user">User</label>
+                    <select class="form-control" id="field_user" multiple name="user" [(ngModel)]="userGroup.users">
+                        <option [ngValue]="getSelected(userGroup.users, userOption)" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
                     </select>
                 </div>
             </div>

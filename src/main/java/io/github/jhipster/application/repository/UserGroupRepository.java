@@ -17,14 +17,14 @@ import java.util.Optional;
 @Repository
 public interface UserGroupRepository extends JpaRepository<UserGroup, Long> {
 
-    @Query(value = "select distinct user_group from UserGroup user_group left join fetch user_group.ids",
+    @Query(value = "select distinct user_group from UserGroup user_group left join fetch user_group.users",
         countQuery = "select count(distinct user_group) from UserGroup user_group")
     Page<UserGroup> findAllWithEagerRelationships(Pageable pageable);
 
-    @Query(value = "select distinct user_group from UserGroup user_group left join fetch user_group.ids")
+    @Query(value = "select distinct user_group from UserGroup user_group left join fetch user_group.users")
     List<UserGroup> findAllWithEagerRelationships();
 
-    @Query("select user_group from UserGroup user_group left join fetch user_group.ids where user_group.id =:id")
+    @Query("select user_group from UserGroup user_group left join fetch user_group.users where user_group.id =:id")
     Optional<UserGroup> findOneWithEagerRelationships(@Param("id") Long id);
 
 }
