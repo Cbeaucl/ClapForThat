@@ -21,9 +21,9 @@
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "id",
+            "relationshipName": "event",
             "otherEntityName": "event",
-            "otherEntityRelationshipName": "id"
+            "otherEntityRelationshipName": "group"
         }
     ],
     "changelogDate": "20181203231559",

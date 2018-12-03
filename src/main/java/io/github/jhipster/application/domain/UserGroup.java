@@ -39,9 +39,9 @@ public class UserGroup implements Serializable {
                inverseJoinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"))
     private Set<User> users = new HashSet<>();
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "group")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Event> ids = new HashSet<>();
+    private Set<Event> events = new HashSet<>();
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -100,29 +100,29 @@ public class UserGroup implements Serializable {
         this.users = users;
     }
 
-    public Set<Event> getIds() {
-        return ids;
+    public Set<Event> getEvents() {
+        return events;
     }
 
-    public UserGroup ids(Set<Event> events) {
-        this.ids = events;
+    public UserGroup events(Set<Event> events) {
+        this.events = events;
         return this;
     }
 
-    public UserGroup addId(Event event) {
-        this.ids.add(event);
-        event.setId(this);
+    public UserGroup addEvent(Event event) {
+        this.events.add(event);
+        event.setGroup(this);
         return this;
     }
 
-    public UserGroup removeId(Event event) {
-        this.ids.remove(event);
-        event.setId(null);
+    public UserGroup removeEvent(Event event) {
+        this.events.remove(event);
+        event.setGroup(null);
         return this;
     }
 
-    public void setIds(Set<Event> events) {
-        this.ids = events;
+    public void setEvents(Set<Event> events) {
+        this.events = events;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

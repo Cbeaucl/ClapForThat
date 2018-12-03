@@ -6,7 +6,7 @@ export interface IEvent {
     id?: number;
     startTime?: Moment;
     name?: string;
-    id?: IUserGroup;
+    group?: IUserGroup;
     categories?: ICategory[];
 }
 
@@ -15,7 +15,7 @@ export class Event implements IEvent {
         public id?: number,
         public startTime?: Moment,
         public name?: string,
-        public id?: IUserGroup,
+        public group?: IUserGroup,
         public categories?: ICategory[]
     ) {}
 }
