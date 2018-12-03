@@ -1,0 +1,33 @@
+{
+    "name": "Choice",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "id",
+            "otherEntityName": "nominee",
+            "otherEntityRelationshipName": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "id",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "id",
+            "otherEntityName": "category",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181203231603",
+    "entityTableName": "choice",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

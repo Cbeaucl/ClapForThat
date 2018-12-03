@@ -5,6 +5,16 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231559_added_entity_UserGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231600_added_entity_Event.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231601_added_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231602_added_entity_Nominee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231603_added_entity_Choice.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181203231559_added_entity_constraints_UserGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231600_added_entity_constraints_Event.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231601_added_entity_constraints_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231602_added_entity_constraints_Nominee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181203231603_added_entity_constraints_Choice.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

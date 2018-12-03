@@ -1,0 +1,32 @@
+{
+    "name": "Nominee",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "id",
+            "otherEntityName": "choice",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "id",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "id"
+        }
+    ],
+    "changelogDate": "20181203231602",
+    "entityTableName": "nominee",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

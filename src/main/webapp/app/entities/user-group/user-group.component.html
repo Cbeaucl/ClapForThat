@@ -1,0 +1,62 @@
+<div>
+    <h2 id="page-heading">
+        <span>User Groups</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-group" [routerLink]="['/user-group/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new User Group
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="userGroups">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Name</span></th>
+            <th><span>Active</span></th>
+            <th><span>Id</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let userGroup of userGroups ;trackBy: trackId">
+                <td><a [routerLink]="['/user-group', userGroup.id, 'view' ]">{{userGroup.id}}</a></td>
+                <td>{{userGroup.name}}</td>
+                <td>{{userGroup.active}}</td>
+                <td>
+                    <span *ngFor="let id of userGroup.ids; let last = last">
+                            {{id.id}}{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/user-group', userGroup.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/user-group', userGroup.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'user-group/'+ userGroup.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
