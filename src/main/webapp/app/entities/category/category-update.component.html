@@ -26,17 +26,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" for="field_id">Id</label>
-                    <select class="form-control" id="field_id" name="id" [(ngModel)]="category.id" >
+                    <label class="form-control-label" for="field_event">Event</label>
+                    <select class="form-control" id="field_event" name="event" [(ngModel)]="category.event" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="eventOption.id === category.id?.id ? category.id : eventOption" *ngFor="let eventOption of events; trackBy: trackEventById">{{eventOption.id}}</option>
+                        <option [ngValue]="eventOption.id === category.event?.id ? category.event : eventOption" *ngFor="let eventOption of events; trackBy: trackEventById">{{eventOption.id}}</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="field_id">Id</label>
-                    <select class="form-control" id="field_id" name="id" [(ngModel)]="category.id" >
+                    <label class="form-control-label" for="field_nominee">Nominee</label>
+                    <select class="form-control" id="field_nominee" name="nominee" [(ngModel)]="category.nominee" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="nomineeOption.id === category.id?.id ? category.id : nomineeOption" *ngFor="let nomineeOption of nominees; trackBy: trackNomineeById">{{nomineeOption.id}}</option>
+                        <option [ngValue]="nomineeOption.id === category.nominee?.id ? category.nominee : nomineeOption" *ngFor="let nomineeOption of nominees; trackBy: trackNomineeById">{{nomineeOption.id}}</option>
                     </select>
                 </div>
             </div>

@@ -7,9 +7,15 @@ export interface IEvent {
     startTime?: Moment;
     name?: string;
     id?: IUserGroup;
-    ids?: ICategory[];
+    categories?: ICategory[];
 }
 
 export class Event implements IEvent {
-    constructor(public id?: number, public startTime?: Moment, public name?: string, public id?: IUserGroup, public ids?: ICategory[]) {}
+    constructor(
+        public id?: number,
+        public startTime?: Moment,
+        public name?: string,
+        public id?: IUserGroup,
+        public categories?: ICategory[]
+    ) {}
 }

@@ -15,9 +15,9 @@
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "id",
+            "relationshipName": "category",
             "otherEntityName": "category",
-            "otherEntityRelationshipName": "id"
+            "otherEntityRelationshipName": "nominee"
         }
     ],
     "changelogDate": "20181203231602",

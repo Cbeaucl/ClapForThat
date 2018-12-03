@@ -32,9 +32,9 @@ public class Nominee implements Serializable {
     @OneToMany(mappedBy = "nominee")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Choice> choices = new HashSet<>();
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "nominee")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Category> ids = new HashSet<>();
+    private Set<Category> categories = new HashSet<>();
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -82,29 +82,29 @@ public class Nominee implements Serializable {
         this.choices = choices;
     }
 
-    public Set<Category> getIds() {
-        return ids;
+    public Set<Category> getCategories() {
+        return categories;
     }
 
-    public Nominee ids(Set<Category> categories) {
-        this.ids = categories;
+    public Nominee categories(Set<Category> categories) {
+        this.categories = categories;
         return this;
     }
 
-    public Nominee addId(Category category) {
-        this.ids.add(category);
-        category.setId(this);
+    public Nominee addCategory(Category category) {
+        this.categories.add(category);
+        category.setNominee(this);
         return this;
     }
 
-    public Nominee removeId(Category category) {
-        this.ids.remove(category);
-        category.setId(null);
+    public Nominee removeCategory(Category category) {
+        this.categories.remove(category);
+        category.setNominee(null);
         return this;
     }
 
-    public void setIds(Set<Category> categories) {
-        this.ids = categories;
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

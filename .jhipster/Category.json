@@ -23,13 +23,13 @@
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "id",
+            "relationshipName": "event",
             "otherEntityName": "event",
             "otherEntityField": "id"
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "id",
+            "relationshipName": "nominee",
             "otherEntityName": "nominee",
             "otherEntityField": "id"
         }

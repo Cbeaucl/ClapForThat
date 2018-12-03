@@ -40,12 +40,12 @@ public class Category implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Choice> choices = new HashSet<>();
     @ManyToOne
-    @JsonIgnoreProperties("ids")
-    private Event id;
+    @JsonIgnoreProperties("categories")
+    private Event event;
 
     @ManyToOne
-    @JsonIgnoreProperties("ids")
-    private Nominee id;
+    @JsonIgnoreProperties("categories")
+    private Nominee nominee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -120,30 +120,30 @@ public class Category implements Serializable {
         this.choices = choices;
     }
 
-    public Event getId() {
-        return id;
+    public Event getEvent() {
+        return event;
     }
 
-    public Category id(Event event) {
-        this.id = event;
+    public Category event(Event event) {
+        this.event = event;
         return this;
     }
 
-    public void setId(Event event) {
-        this.id = event;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
-    public Nominee getId() {
-        return id;
+    public Nominee getNominee() {
+        return nominee;
     }
 
-    public Category id(Nominee nominee) {
-        this.id = nominee;
+    public Category nominee(Nominee nominee) {
+        this.nominee = nominee;
         return this;
     }
 
-    public void setId(Nominee nominee) {
-        this.id = nominee;
+    public void setNominee(Nominee nominee) {
+        this.nominee = nominee;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
