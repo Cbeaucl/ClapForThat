@@ -7,7 +7,7 @@ export interface ICategory {
     name?: string;
     description?: string;
     completed?: boolean;
-    ids?: IChoice[];
+    choices?: IChoice[];
     id?: IEvent;
     id?: INominee;
 }
@@ -18,7 +18,7 @@ export class Category implements ICategory {
         public name?: string,
         public description?: string,
         public completed?: boolean,
-        public ids?: IChoice[],
+        public choices?: IChoice[],
         public id?: IEvent,
         public id?: INominee
     ) {

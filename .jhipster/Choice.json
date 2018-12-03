@@ -3,21 +3,21 @@
     "fields": [],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
-            "relationshipName": "id",
-            "otherEntityName": "nominee",
-            "otherEntityRelationshipName": "id"
-        },
-        {
             "relationshipType": "many-to-one",
-            "relationshipName": "id",
+            "relationshipName": "user",
             "otherEntityName": "user",
             "otherEntityField": "id"
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "id",
+            "relationshipName": "category",
             "otherEntityName": "category",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "nominee",
+            "otherEntityName": "nominee",
             "otherEntityField": "id"
         }
     ],

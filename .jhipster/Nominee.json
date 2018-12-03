@@ -8,10 +8,10 @@
     ],
     "relationships": [
         {
-            "relationshipType": "many-to-one",
-            "relationshipName": "id",
+            "relationshipType": "one-to-many",
+            "relationshipName": "choice",
             "otherEntityName": "choice",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "nominee"
         },
         {
             "relationshipType": "one-to-many",

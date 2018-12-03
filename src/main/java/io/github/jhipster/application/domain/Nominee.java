@@ -1,7 +1,6 @@
 package io.github.jhipster.application.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -30,10 +29,9 @@ public class Nominee implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
-    @JsonIgnoreProperties("ids")
-    private Choice id;
-
+    @OneToMany(mappedBy = "nominee")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Choice> choices = new HashSet<>();
     @OneToMany(mappedBy = "id")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Category> ids = new HashSet<>();
@@ -59,17 +57,29 @@ public class Nominee implements Serializable {
         this.name = name;
     }
 
-    public Choice getId() {
-        return id;
+    public Set<Choice> getChoices() {
+        return choices;
     }
 
-    public Nominee id(Choice choice) {
-        this.id = choice;
+    public Nominee choices(Set<Choice> choices) {
+        this.choices = choices;
         return this;
     }
 
-    public void setId(Choice choice) {
-        this.id = choice;
+    public Nominee addChoice(Choice choice) {
+        this.choices.add(choice);
+        choice.setNominee(this);
+        return this;
+    }
+
+    public Nominee removeChoice(Choice choice) {
+        this.choices.remove(choice);
+        choice.setNominee(null);
+        return this;
+    }
+
+    public void setChoices(Set<Choice> choices) {
+        this.choices = choices;
     }
 
     public Set<Category> getIds() {

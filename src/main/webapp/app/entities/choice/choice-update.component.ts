@@ -9,6 +9,8 @@ import { ChoiceService } from './choice.service';
 import { IUser, UserService } from 'app/core';
 import { ICategory } from 'app/shared/model/category.model';
 import { CategoryService } from 'app/entities/category';
+import { INominee } from 'app/shared/model/nominee.model';
+import { NomineeService } from 'app/entities/nominee';
 
 @Component({
     selector: 'jhi-choice-update',
@@ -22,11 +24,14 @@ export class ChoiceUpdateComponent implements OnInit {
 
     categories: ICategory[];
 
+    nominees: INominee[];
+
     constructor(
         private jhiAlertService: JhiAlertService,
         private choiceService: ChoiceService,
         private userService: UserService,
         private categoryService: CategoryService,
+        private nomineeService: NomineeService,
         private activatedRoute: ActivatedRoute
     ) {}
 
@@ -44,6 +49,12 @@ export class ChoiceUpdateComponent implements OnInit {
         this.categoryService.query().subscribe(
             (res: HttpResponse<ICategory[]>) => {
                 this.categories = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.nomineeService.query().subscribe(
+            (res: HttpResponse<INominee[]>) => {
+                this.nominees = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -84,6 +95,10 @@ export class ChoiceUpdateComponent implements OnInit {
     }
 
     trackCategoryById(index: number, item: ICategory) {
+        return item.id;
+    }
+
+    trackNomineeById(index: number, item: INominee) {
         return item.id;
     }
 }

@@ -34,10 +34,10 @@ public class UserGroup implements Serializable {
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "user_group_id",
+    @JoinTable(name = "user_group_user",
                joinColumns = @JoinColumn(name = "user_groups_id", referencedColumnName = "id"),
-               inverseJoinColumns = @JoinColumn(name = "ids_id", referencedColumnName = "id"))
-    private Set<User> ids = new HashSet<>();
+               inverseJoinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"))
+    private Set<User> users = new HashSet<>();
 
     @OneToMany(mappedBy = "id")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -77,29 +77,29 @@ public class UserGroup implements Serializable {
         this.active = active;
     }
 
-    public Set<User> getIds() {
-        return ids;
+    public Set<User> getUsers() {
+        return users;
     }
 
-    public UserGroup ids(Set<User> users) {
-        this.ids = users;
+    public UserGroup users(Set<User> users) {
+        this.users = users;
         return this;
     }
 
-    public UserGroup addId(User user) {
-        this.ids.add(user);
-        user.getIds().add(this);
+    public UserGroup addUser(User user) {
+        this.users.add(user);
+        user.getGroups().add(this);
         return this;
     }
 
-    public UserGroup removeId(User user) {
-        this.ids.remove(user);
-        user.getIds().remove(this);
+    public UserGroup removeUser(User user) {
+        this.users.remove(user);
+        user.getGroups().remove(this);
         return this;
     }
 
-    public void setIds(Set<User> users) {
-        this.ids = users;
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 
     public Set<Event> getIds() {

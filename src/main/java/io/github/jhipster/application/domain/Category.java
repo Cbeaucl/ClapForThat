@@ -36,9 +36,9 @@ public class Category implements Serializable {
     @Column(name = "completed")
     private Boolean completed;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "category")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Choice> ids = new HashSet<>();
+    private Set<Choice> choices = new HashSet<>();
     @ManyToOne
     @JsonIgnoreProperties("ids")
     private Event id;
@@ -95,29 +95,29 @@ public class Category implements Serializable {
         this.completed = completed;
     }
 
-    public Set<Choice> getIds() {
-        return ids;
+    public Set<Choice> getChoices() {
+        return choices;
     }
 
-    public Category ids(Set<Choice> choices) {
-        this.ids = choices;
+    public Category choices(Set<Choice> choices) {
+        this.choices = choices;
         return this;
     }
 
-    public Category addId(Choice choice) {
-        this.ids.add(choice);
-        choice.setId(this);
+    public Category addChoice(Choice choice) {
+        this.choices.add(choice);
+        choice.setCategory(this);
         return this;
     }
 
-    public Category removeId(Choice choice) {
-        this.ids.remove(choice);
-        choice.setId(null);
+    public Category removeChoice(Choice choice) {
+        this.choices.remove(choice);
+        choice.setCategory(null);
         return this;
     }
 
-    public void setIds(Set<Choice> choices) {
-        this.ids = choices;
+    public void setChoices(Set<Choice> choices) {
+        this.choices = choices;
     }
 
     public Event getId() {

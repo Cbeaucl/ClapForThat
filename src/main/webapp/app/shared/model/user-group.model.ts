@@ -5,12 +5,12 @@ export interface IUserGroup {
     id?: number;
     name?: string;
     active?: boolean;
-    ids?: IUser[];
+    users?: IUser[];
     ids?: IEvent[];
 }
 
 export class UserGroup implements IUserGroup {
-    constructor(public id?: number, public name?: string, public active?: boolean, public ids?: IUser[], public ids?: IEvent[]) {
+    constructor(public id?: number, public name?: string, public active?: boolean, public users?: IUser[], public ids?: IEvent[]) {
         this.active = this.active || false;
     }
 }

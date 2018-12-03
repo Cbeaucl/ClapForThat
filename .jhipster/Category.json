@@ -17,9 +17,9 @@
     "relationships": [
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "id",
+            "relationshipName": "choice",
             "otherEntityName": "choice",
-            "otherEntityRelationshipName": "id"
+            "otherEntityRelationshipName": "category"
         },
         {
             "relationshipType": "many-to-one",

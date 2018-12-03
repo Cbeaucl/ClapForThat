@@ -13,8 +13,8 @@
     "relationships": [
         {
             "relationshipType": "many-to-many",
-            "otherEntityRelationshipName": "id",
-            "relationshipName": "id",
+            "otherEntityRelationshipName": "group",
+            "relationshipName": "user",
             "otherEntityName": "user",
             "otherEntityField": "id",
             "ownerSide": true

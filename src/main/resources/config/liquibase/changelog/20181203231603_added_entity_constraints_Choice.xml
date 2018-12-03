@@ -8,17 +8,23 @@
     -->
     <changeSet id="20181203231603-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="id_id"
+        <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="choice"
-                                 constraintName="fk_choice_id_id"
+                                 constraintName="fk_choice_user_id"
                                  referencedColumnNames="id"
                                  referencedTableName="jhi_user"/>
 
-        <addForeignKeyConstraint baseColumnNames="id_id"
+        <addForeignKeyConstraint baseColumnNames="category_id"
                                  baseTableName="choice"
-                                 constraintName="fk_choice_id_id"
+                                 constraintName="fk_choice_category_id"
                                  referencedColumnNames="id"
                                  referencedTableName="category"/>
+
+        <addForeignKeyConstraint baseColumnNames="nominee_id"
+                                 baseTableName="choice"
+                                 constraintName="fk_choice_nominee_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nominee"/>
 
     </changeSet>
 </databaseChangeLog>
