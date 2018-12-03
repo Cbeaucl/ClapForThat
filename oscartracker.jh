@@ -12,7 +12,7 @@ relationship OneToMany {
 Nominee to Choice{nominee}
 }
 relationship ManyToMany{
-UserGroup to User
+UserGroup{user} to User
 }
 relationship ManyToOne{
 Category{event} to Event{category}
